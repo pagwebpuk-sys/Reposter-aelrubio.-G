@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repostería El Rubio | Dulzura y Elegancia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-negro: #111111;
+            --color-dorado: #FFD700;
+            --color-dorado-oscuro: #C5A000;
+            --color-blanco: #ffffff;
+            --color-gris-claro: #f9f9f9;
+            --color-gris-oscuro: #1a1a1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-negro);
+            color: var(--color-blanco);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('paso-a-paso-para-decorar-un-bizcocho-con-glaseado-de-limon-y-flores-de-frambuesa-y-chocolate-resultado-final_50accc77_800x800.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--color-dorado);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* CÍRCULO GIGANTE */
+        .circle-container {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 8px solid var(--color-dorado);
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            margin: 0 auto;
+            background-color: #000;
+            position: relative;
+            z-index: 10;
+        }
+
+        .circle-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- SECCIONES --- */
+        .section { padding: 60px 20px; text-align: center; }
+        .bg-light { background-color: var(--color-gris-claro); color: var(--color-negro); }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--color-dorado);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 3px;
+            background-color: var(--color-dorado);
+            margin: 10px auto 0;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            color: #555;
+        }
+
+        .content-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .text-content { flex: 1; min-width: 300px; text-align: left; }
+        .text-content ul { list-style: none; margin-top: 20px; }
+        .text-content ul li { margin-bottom: 10px; font-size: 1.1rem; }
+        .text-content ul li i { color: var(--color-dorado); margin-right: 10px; }
+
+        .image-content { flex: 1; min-width: 300px; }
+        .image-content img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 2px solid var(--color-dorado);
+        }
+
+        /* --- BOTONES --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn-gold { background-color: var(--color-dorado); color: var(--color-negro); }
+        .btn-gold:hover { background-color: var(--color-dorado-oscuro); transform: scale(1.05); }
+        .btn-whatsapp { background-color: #25D366; color: white; }
+        .btn-whatsapp:hover { background-color: #128C7E; }
+
+        /* --- UBICACIÓN Y HORARIOS --- */
+        .info-box {
+            background: var(--color-gris-oscuro);
+            border: 2px solid var(--color-dorado);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .info-item i { color: var(--color-dorado); width: 30px; }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #000;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 3px solid var(--color-dorado);
+        }
+
+        .social-icons a {
+            color: var(--color-dorado);
+            font-size: 2rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover { color: var(--color-blanco); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .circle-container { width: 250px; height: 250px; }
+            .content-grid { flex-direction: column; }
+            .text-content { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <h1>Repostería El Rubio</h1>
+        <p>"Donde cada bocado es una experiencia inolvidable"</p>
+        
+        <div class="circle-container">
+            <img src="IMG-20260304-WA0002.jpg" alt="Pastel El Rubio">
+        </div>
+    </header>
+
+    <!-- SECCIÓN 1: OCASIONES -->
+    <section class="section bg-light">
+        <h2 class="section-title">Pasteles para todas las ocasiones</h2>
+        <p class="subtitle">Hacemos realidad tus sueños dulces</p>
+        
+        <div class="content-grid">
+            <div class="image-content">
+                <img src="IMG-20260305-WA0034.jpg" alt="Pasteles para eventos">
+            </div>
+            <div class="text-content">
+                <h3>Celebra con estilo</h3>
+                <p>Ya sea un evento íntimo o una gran fiesta, tenemos el pastel perfecto para ti.</p>
+                <ul>
+                    <li><i class="fas fa-birthday-cake"></i> Cumpleaños 🎂</li>
+                    <li><i class="fas fa-rings-wedding"></i> Bodas</li>
+                    <li><i class="fas fa-baby"></i> Bautizos</li>
+                    <li><i class="fas fa-baby-carriage"></i> Baby Shower</li>
+                    <li><i class="fas fa-venus-mars"></i> Revelación de Sexo</li>
+                    <li><i class="fas fa-star"></i> Y mucho más...</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: SABORES -->
+    <section class="section">
+        <h2 class="section-title">Nuestros Sabores</h2>
+        <p class="subtitle">La combinación perfecta de texturas y sabores</p>
+
+        <div class="content-grid">
+            <div class="text-content">
+                <h3>Porciones de Bizcocho</h3>
+                <p>Elige tu favorito para endulzar tu día:</p>
+                <ul>
+                    <li><i class="fas fa-cookie-bite"></i> Dulce de Leche</li>
+                    <li><i class="fas fa-lemon"></i> Piña</li>
+                    <li><i class="fas fa-apple-alt"></i> Guayaba</li>
+                    <li><i class="fas fa-heart"></i> Fresa</li>
+                </ul>
+            </div>
+            <div class="image-content">
+                <img src="images.jpeg" alt="Sabores de bizcocho">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: ESPECIALIDADES -->
+    <section class="section bg-light">
+        <h2 class="section-title">Especialidades de la Casa</h2>
+        <p class="subtitle">Nuestros favoritos de los clientes</p>
+
+        <div class="content-grid">
+            <div class="image-content">
+                <img src="Collage_20260310_161951.jpg" alt="Tres Leches y Vaso de Crema">
+            </div>
+            <div class="text-content">
+                <h3>Dulces Tradicionales</h3>
+                <ul>
+                    <li><i class="fas fa-glass-whiskey"></i> <strong>Tres Leches:</strong> El clásico que nunca falla.</li>
+                    <li><i class="fas fa-mug-hot"></i> <strong>Vaso de Crema:</strong> Crema batida fresca con fresas naturales.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: POSTRES FRÍOS -->
+    <section class="section">
+        <h2 class="section-title">Postres Fríos</h2>
+        <p class="subtitle">Refresca tu paladar</p>
+
+        <div class="content-grid">
+            <div class="text-content">
+                <h3>Para compartir</h3>
+                <ul>
+                    <li><i class="fas fa-glass-citrus"></i> Gelatinas variadas</li>
+                    <li><i class="fas fa-snowflake"></i> Helados caseros</li>
+                </ul>
+            </div>
+            <div class="image-content">
+                <img src="Collage_20260310_162254.jpg" alt="Gelatinas y Helados">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: NUESTROS RICOS FLAN (CORREGIDO) -->
+    <section class="section bg-light">
+        <h2 class="section-title">Nuestros ricos Flan</h2>
+        <p class="subtitle">Para que tu paladar vaya a las nubes</p>
+
+        <div class="content-grid">
+            <div class="image-content">
+                <img src="IMG-20260306-WA0000.jpg" alt="Nuestros ricos Flan">
+            </div>
+            <div class="text-content">
+                <h3>Una experiencia única</h3>
+                <p>Descubre nuestros Flan especiales, hechos con amor y los mejores ingredientes.</p>
+                <ul>
+                    <li><i class="fas fa-star"></i> Sabor inigualable</li>
+                    <li><i class="fas fa-heart"></i> Hecho con amor</li>
+                    <li><i class="fas fa-check-circle"></i> Calidad garantizada</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: UBICACIÓN Y CONTACTO -->
+    <section class="section bg-light" id="contacto">
+        <h2 class="section-title">Visítanos</h2>
+        <p class="subtitle">Estamos listos para atenderte</p>
+
+        <div class="content-grid">
+            <div class="text-content">
+                <div class="info-box">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <strong>Ubicación:</strong><br>
+                        Repostería El Rubio<br>
+                        La Doble Vía, Guayubin 62200
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <strong>Horarios:</strong><br>
+                        Lunes: Cerrado<br>
+                        Martes a Domingo: 9:00 am - 6:00 pm
+                    </div>
+                    
+                    <a href="https://www.google.com/maps/search/?api=1&query=Repostería+El+Rubio+Guayubin" target="_blank" class="btn btn-gold">
+                        <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
+                    </a>
+                    <br>
+                    <a href="https://wa.me/18297725286" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3 style="color: var(--color-dorado); margin-bottom: 20px;">Síguenos</h3>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@reposteria_el_rubio" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/reposteria_el_rubio" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/18297725286" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #777;">&copy; 2024 Repostería El Rubio. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
